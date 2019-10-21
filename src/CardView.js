@@ -150,17 +150,24 @@ const s = StyleSheet.create({
             style={[BASE_SIZE, s.cardFace, transform]}
             source={imageFront}>
             <Image style={[s.icon]} source={Icons[brand]} />
+            <View style={{ flex: 1, width: '90%', alignSelf: 'flex-start' }}>
+              <Text
+                numberOfLines={1}
+                ellipsizeMode="tail"
+                style={[
+                  s.baseText,
+                  { fontFamily },
+                  s.number,
+                  !number && s.placeholder,
+                  focused === 'number' && s.focused
+                ]}>
+                {!number ? placeholder.number : number}
+              </Text>
+            </View>
+
             <Text
-              style={[
-                s.baseText,
-                { fontFamily },
-                s.number,
-                !number && s.placeholder,
-                focused === 'number' && s.focused
-              ]}>
-              {!number ? placeholder.number : number}
-            </Text>
-            <Text
+              numberOfLines={1}
+              ellipsizeMode="tail"
               style={[
                 s.baseText,
                 { fontFamily },
@@ -171,6 +178,7 @@ const s = StyleSheet.create({
               numberOfLines={1}>
               {!name ? placeholder.name : name.toUpperCase()}
             </Text>
+
             <Text
               style={[
                 s.baseText,
