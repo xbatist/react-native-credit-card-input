@@ -179,7 +179,7 @@ const s = StyleSheet.create({
                 !name && s.placeholder,
                 focused === 'name' && s.focused
               ]}
-              numberOfLines={1}>
+            >
               {!name ? placeholder.name : name.toUpperCase()}
             </Text>
 
