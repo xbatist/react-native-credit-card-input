@@ -136,6 +136,8 @@ const s = StyleSheet.create({
       ]
     }
 
+    const adjustedStyle = number && number.length > 19 ? { fontSize: 18 } : null;
+
     return (
       <View style={[s.cardContainer, containerSize]}>
         <FlipCard
@@ -152,6 +154,7 @@ const s = StyleSheet.create({
             <Image style={[s.icon]} source={Icons[brand]} />
             <View style={{ flex: 1, width: '90%', alignSelf: 'flex-start' }}>
               <Text
+                adjustsFontSizeToFit
                 numberOfLines={1}
                 ellipsizeMode="tail"
                 style={[
@@ -159,7 +162,8 @@ const s = StyleSheet.create({
                   { fontFamily },
                   s.number,
                   !number && s.placeholder,
-                  focused === 'number' && s.focused
+                  focused === 'number' && s.focused,
+                  { ...adjustedStyle }
                 ]}>
                 {!number ? placeholder.number : number}
               </Text>
@@ -175,7 +179,7 @@ const s = StyleSheet.create({
                 !name && s.placeholder,
                 focused === 'name' && s.focused
               ]}
-              numberOfLines={1}>
+            >
               {!name ? placeholder.name : name.toUpperCase()}
             </Text>
 
