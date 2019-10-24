@@ -81,6 +81,7 @@ const s = StyleSheet.create({
 
     brand: PropTypes.string,
     name: PropTypes.string,
+    mmYY: PropTypes.string,
     number: PropTypes.string,
     expiry: PropTypes.string,
     cvc: PropTypes.string,
@@ -113,6 +114,7 @@ const s = StyleSheet.create({
       focused,
       brand,
       name,
+      mmYY,
       number,
       expiry,
       cvc,
@@ -191,9 +193,7 @@ const s = StyleSheet.create({
                 s.placeholder,
                 focused === 'expiry' && s.focused
               ]}>
-              {placeholder && placeholder.mmYY
-                ? placeholder.mmYY
-                : 'MONTH/YEAR'}
+              {mmYY}
             </Text>
             <Text
               style={[

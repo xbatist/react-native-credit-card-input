@@ -85,7 +85,8 @@ const POSTAL_CODE_INPUT_WIDTH = 120 // https://github.com/yannickcr/eslint-plugi
       number: '1234 5678 1234 5678',
       expiry: 'MM/YY',
       cvc: 'CVC',
-      postalCode: '34567'
+      postalCode: '34567',
+      mmYY: 'MONTH/YEAR'
     },
     inputContainerStyle: {
       borderBottomWidth: 1,
@@ -198,6 +199,11 @@ const POSTAL_CODE_INPUT_WIDTH = 120 // https://github.com/yannickcr/eslint-plugi
               ? name
               : placeholders && placeholders.name
               ? placeholders.name
+              : ''
+          }
+          mmYY={
+            placeholders && placeholders.mmYY
+              ? placeholders.mmYY
               : ''
           }
           number={number}
