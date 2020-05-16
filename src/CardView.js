@@ -152,8 +152,9 @@ const s = StyleSheet.create({
           flip={shouldFlip}>
           <ImageBackground
             style={[BASE_SIZE, s.cardFace, transform]}
-            source={imageFront}>
-            <Image style={[s.icon]} source={Icons[brand]} />
+            source={imageFront}
+            fadeDuration={0}>
+            <Image style={[s.icon]} source={Icons[brand]} fadeDuration={0} />
             <View style={{ flex: 1, width: '90%', alignSelf: 'flex-start' }}>
               <Text
                 adjustsFontSizeToFit
@@ -220,7 +221,8 @@ const s = StyleSheet.create({
           </ImageBackground>
           <ImageBackground
             style={[BASE_SIZE, s.cardFace, transform]}
-            source={imageBack}>
+            source={imageBack}
+            fadeDuration={0}>
             <Text
               style={[
                 s.baseText,
